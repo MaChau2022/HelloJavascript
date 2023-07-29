@@ -1,0 +1,16 @@
+{
+  "name": "hellojavascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "apply.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/redis": "^4.0.11",
+    "express": "^4.18.2",
+    "redis": "^4.6.7"
+  }
+}
