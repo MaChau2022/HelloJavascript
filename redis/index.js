@@ -1,9 +1,4 @@
 const redis = require("redis")
-const useKey = require("./value")
-const useHash = require('./hash')
-const useArray = require('./list')
-const useSet = require('./set')
-const useEvent = require('./event')
 
 const subscriber = redis.createClient({
     host: '127.0.0.1',
@@ -14,9 +9,23 @@ const publisher = redis.createClient({
     port: '6379'
 }) 
 
-Promise.all([
-    subscriber.connect(),
-    publisher.connect()
-]).then((res) => {
-    useEvent(subscriber, publisher)
-})
+async function init() {
+    await subscriber.connect();
+    await publisher.connect();
+
+    global.subscriber = subscriber;
+    global.publisher = publisher;
+    console.log("  Redis init")
+}
+
+async function quit() {
+    console.log("  Redis quit")
+    await subscriber.disconnect()
+    await publisher.disconnect()
+}
+
+
+module.exports = {
+    init,
+    quit,
+}

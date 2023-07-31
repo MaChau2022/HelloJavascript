@@ -4,13 +4,17 @@
   "description": "",
   "main": "apply.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:algo": "mocha algo",
+    "test:redis": "mocha redis",
+    "test:mocha": "mocha mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/redis": "^4.0.11",
+    "chai": "^4.3.7",
     "express": "^4.18.2",
+    "mocha": "^10.2.0",
     "redis": "^4.6.7"
   }
 }
