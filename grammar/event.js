@@ -1,4 +1,4 @@
-export class MyEvent {
+module.exports = class MyEvent {
     constructor() {
         this.on = this._register.bind(this)
         this.off = this._unregister.bind(this)

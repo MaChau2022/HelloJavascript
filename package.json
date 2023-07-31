@@ -6,8 +6,8 @@
   "scripts": {
     "test:algo": "mocha algo",
     "test:redis": "mocha redis",
-    "test:mocha": "mocha mocha",
-    "test:"
+    "test:mocha": "mocha test",
+    "test:grammar": "mocha grammar"
   },
   "author": "",
   "license": "ISC",

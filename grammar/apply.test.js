@@ -9,7 +9,7 @@ Function.prototype.myApply= function(context, ...args) {
 const expect = require('chai').expect
 
 describe('Apply', function() {
-    it('Apply', function() {
+    it('Customize apply', function() {
         const data = {
             [0]: 'Alice',
             [1]: 'Bob',
