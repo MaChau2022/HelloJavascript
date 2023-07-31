@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const bubbleSort = require('./bubble')
+const bubbleSort = require('./bubble.test')
 const selectSort = require('./select')
 const insertSort = require('./insert')
 const { random } = require('./util')
@@ -10,11 +10,6 @@ describe('Sort', function() {
     const arr = random(20, 100, 1)
     const sorted = [...arr].sort((a, b) => a - b)
     console.log(arr)
-
-    it('Bubble sort', function() {
-        const result = bubbleSort([...arr])
-        expect(result).to.be.deep.equal(sorted)
-    })
 
     it('Insert sort', function() {
         const result = insertSort([...arr])
@@ -28,11 +23,6 @@ describe('Sort', function() {
 
     it('Quick sort', function() {
         const result = quicksort([...arr], 0, arr.length - 1)
-        expect(result).to.be.deep.equal(sorted)
-    })
-
-    it.only('Heap sort', function() {
-        const result = heapsort([...arr])
         expect(result).to.be.deep.equal(sorted)
     })
 })

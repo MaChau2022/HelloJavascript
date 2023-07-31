@@ -1,6 +1,7 @@
-const { swap } = require("./util");
+const { swap, random } = require("./util");
+const { expect } = require('chai')
 
-module.exports = function heapSort(arr) {
+function heapSort(arr) {
     const len = arr.length;
     for (let i = Math.floor(len / 2) - 1; i >= 0; i -= 1) {
         heapCheck(arr, i, len);
@@ -24,3 +25,15 @@ function heapCheck(arr, i, len) {
         } else break;
     }
 }
+
+describe('Heap sort', () => {
+    it('Heap sort', function() {
+        const arr = random(20, 100, 1)
+        const sorted = [...arr].sort((a, b) => a - b)
+        const result = heapSort(arr)
+        expect(result).to.be.deep.equal(sorted)
+    })
+})
+
+module.exports = heapSort
+
