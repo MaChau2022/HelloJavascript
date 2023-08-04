@@ -1,16 +1,7 @@
 const { expect } = require('chai')
 const { describe } = require('mocha')
 
-before(function() {
-    console.log("  Use hook before")
-    global.name = 'iduck';
-})
-
-after(function() {
-    console.log("  Use hook after")
-})
-
-describe('Bar', async function() {
+describe('Test case timeout', async function() {
     it('Check plus', async function() {
         expect(1 + 1).to.be.equal(2)
     })
